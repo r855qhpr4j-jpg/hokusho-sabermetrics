@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>取込テンプレートの使い方</title>
+  <style>
+    :root {
+      --bg: #f4f6f8;
+      --panel: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --line: #d1d5db;
+      --accent: #0f766e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Yu Gothic UI", "Yu Gothic", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .wrap {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 40px 20px 64px;
+    }
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 18px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+    h1, h2 { margin: 0 0 14px; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.2rem; }
+    p, li { color: var(--muted); }
+    ul { padding-left: 1.2rem; margin: 0; }
+    code {
+      background: #ecfeff;
+      color: #134e4a;
+      padding: 2px 7px;
+      border-radius: 8px;
+    }
+    .files a {
+      display: inline-block;
+      margin: 8px 12px 0 0;
+      padding: 10px 14px;
+      border-radius: 12px;
+      text-decoration: none;
+      border: 1px solid #99f6e4;
+      background: #f0fdfa;
+      color: #115e59;
+      font-weight: 700;
+    }
+    .cols {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="panel">
+      <h1>取込テンプレートの使い方</h1>
+      <p>このページから、打者用と投手用のCSVテンプレートを確認できます。CSVはそのままExcelで開いて使えます。</p>
+      <div class="files">
+        <a href="./取込テンプレート_打者.csv">打者テンプレートを開く</a>
+        <a href="./取込テンプレート_投手.csv">投手テンプレートを開く</a>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>使い方</h2>
+      <ul>
+        <li>CSVをExcelで開く</li>
+        <li>1行目の見出しは消さずに、2行目以降へ各試合の成績を追加する</li>
+        <li>選手名はサイトのプルダウンと同じ表記にそろえる</li>
+        <li>保存するときはCSVのままで大丈夫です</li>
+      </ul>
+    </section>
+
+    <section class="cols">
+      <article class="panel">
+        <h2>打者テンプレートの列</h2>
+        <ul>
+          <li><code>date</code>: 試合日 例 <code>2026-04-01</code></li>
+          <li><code>opponent</code>: 相手校</li>
+          <li><code>competition</code>: 大会名や練習試合</li>
+          <li><code>player</code>: 選手名</li>
+          <li><code>pa</code>: 打席</li>
+          <li><code>single</code>: 単打</li>
+          <li><code>double</code>: 二塁打</li>
+          <li><code>triple</code>: 三塁打</li>
+          <li><code>homeRun</code>: 本塁打</li>
+          <li><code>runs</code>: 得点</li>
+          <li><code>rbi</code>: 打点</li>
+          <li><code>so</code>: 三振</li>
+          <li><code>bb</code>: 四球</li>
+          <li><code>hbp</code>: 死球</li>
+          <li><code>sh</code>: 犠打</li>
+          <li><code>sf</code>: 犠飛</li>
+          <li><code>sb</code>: 盗塁</li>
+          <li><code>cs</code>: 盗塁死</li>
+          <li><code>gdp</code>: 併殺打</li>
+          <li><code>note</code>: メモ</li>
+        </ul>
+      </article>
+
+      <article class="panel">
+        <h2>投手テンプレートの列</h2>
+        <ul>
+          <li><code>date</code>: 試合日 例 <code>2026-04-01</code></li>
+          <li><code>opponent</code>: 相手校</li>
+          <li><code>competition</code>: 大会名や練習試合</li>
+          <li><code>player</code>: 選手名</li>
+          <li><code>innings</code>: 投球回 例 <code>7.0</code> <code>6.1</code></li>
+          <li><code>hitsAllowed</code>: 被安打</li>
+          <li><code>hrAllowed</code>: 被本塁打</li>
+          <li><code>strikeouts</code>: 奪三振</li>
+          <li><code>walks</code>: 与四球</li>
+          <li><code>hitByPitch</code>: 与死球</li>
+          <li><code>runsAllowed</code>: 失点</li>
+          <li><code>earnedRuns</code>: 自責点</li>
+          <li><code>result</code>: <code>W</code> <code>L</code> <code>S</code> など</li>
+          <li><code>starter</code>: 先発なら <code>TRUE</code></li>
+          <li><code>qualityStart</code>: QSなら <code>TRUE</code></li>
+          <li><code>completeGame</code>: 完投なら <code>TRUE</code></li>
+          <li><code>note</code>: メモ</li>
+        </ul>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
