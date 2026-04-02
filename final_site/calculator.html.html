@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>計算ツール | 北照 セイバーメトリクス</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="site-brand" href="index.html">北照 セイバーメトリクス</a>
+      <nav class="site-nav">
+        <a href="batting.html">打撃指標</a>
+        <a href="pitching.html">投手指標</a>
+        <a href="catching.html">捕手指標</a>
+        <a href="glossary.html">用語集</a>
+        <a href="calculator.html" aria-current="page">計算ツール</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <p class="eyebrow">Calculator</p>
+        <h1>計算ツール</h1>
+        <p class="lead">数字を入れるだけで、打撃・投手の主な指標をその場で試算できます。</p>
+      </section>
+
+      <section class="two-column-page page-section">
+        <section class="panel">
+          <div class="section-head">
+            <h2>打撃計算</h2>
+            <p>出塁率、長打率、OPS、wOBA を簡易計算します。</p>
+          </div>
+          <form id="battingCalcForm" class="stack-form">
+            <div class="form-grid three">
+              <label>打席数<input name="pa" type="number" min="0" value="0"></label>
+              <label>単打<input name="single" type="number" min="0" value="0"></label>
+              <label>二塁打<input name="double" type="number" min="0" value="0"></label>
+              <label>三塁打<input name="triple" type="number" min="0" value="0"></label>
+              <label>本塁打<input name="homeRun" type="number" min="0" value="0"></label>
+              <label>四球<input name="bb" type="number" min="0" value="0"></label>
+              <label>死球<input name="hbp" type="number" min="0" value="0"></label>
+              <label>犠打<input name="sh" type="number" min="0" value="0"></label>
+              <label>犠飛<input name="sf" type="number" min="0" value="0"></label>
+            </div>
+          </form>
+          <div id="battingCalcResult" class="metric-grid"></div>
+        </section>
+
+        <section class="panel">
+          <div class="section-head">
+            <h2>投手計算</h2>
+            <p>防御率、WHIP、K/BB、K/9、BB/9、FIP を簡易計算します。</p>
+          </div>
+          <form id="pitchingCalcForm" class="stack-form">
+            <div class="form-grid three">
+              <label>投球回<input name="innings" type="text" value="0.0"></label>
+              <label>被安打<input name="hitsAllowed" type="number" min="0" value="0"></label>
+              <label>被本塁打<input name="hrAllowed" type="number" min="0" value="0"></label>
+              <label>奪三振<input name="strikeouts" type="number" min="0" value="0"></label>
+              <label>与四球<input name="walks" type="number" min="0" value="0"></label>
+              <label>与死球<input name="hitByPitch" type="number" min="0" value="0"></label>
+              <label>自責点<input name="earnedRuns" type="number" min="0" value="0"></label>
+            </div>
+          </form>
+          <div id="pitchingCalcResult" class="metric-grid"></div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="common.js"></script>
+  <script src="supabase-sync.js"></script>
+  <script src="calculator.js"></script>
+</body>
+</html>

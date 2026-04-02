@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>北照 セイバーメトリクス</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="site-brand" href="index.html">北照 セイバーメトリクス</a>
+      <nav class="site-nav">
+        <a href="batting.html">打撃指標</a>
+        <a href="pitching.html">投手指標</a>
+        <a href="catching.html">守備指標</a>
+        <a href="overview.html">全体一覧</a>
+        <a href="glossary.html">用語集</a>
+        <a href="calculator.html">計算ツール</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-simple">
+        <div class="hero-copy-block">
+          <p class="eyebrow">Hokusho Baseball</p>
+          <h1>北照 セイバーメトリクス</h1>
+          <p class="lead">
+            北照野球部の試合データをまとめて管理し、打撃・投手・捕手の指標を選手別にも全体でも確認できるサイトです。
+            期間を指定して状態の変化を見ることもできます。
+          </p>
+          <div class="hero-badges">
+            <span>打撃分析</span>
+            <span>投手分析</span>
+            <span>守備分析</span>
+            <span>期間指定</span>
+          </div>
+        </div>
+        <div class="hero-gallery">
+          <figure class="hero-photo hero-photo-large">
+            <img src="https://www.hokusho.ed.jp/feature/sports/img/img-07-2020.jpg" alt="北照野球部">
+            <figcaption>北照野球部</figcaption>
+          </figure>
+          <figure class="hero-photo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/%E9%98%AA%E7%A5%9E%E7%94%B2%E5%AD%90%E5%9C%92%E7%90%83%E5%A0%B4_-_panoramio_%2826%29.jpg" alt="甲子園球場">
+            <figcaption>目標とする舞台</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="card-grid four">
+          <a class="feature-card" href="batting.html">
+            <h2>打撃指標</h2>
+            <p>出塁率、長打率、OPS、wOBA などを選手ごとに確認できます。</p>
+          </a>
+          <a class="feature-card" href="pitching.html">
+            <h2>投手指標</h2>
+            <p>防御率、WHIP、K/BB、FIP などを期間指定で見られます。</p>
+          </a>
+          <a class="feature-card" href="catching.html">
+            <h2>守備指標</h2>
+            <p>盗塁阻止率、逸球、失策数など守備面の数字を確認できます。</p>
+          </a>
+          <a class="feature-card" href="overview.html">
+            <h2>全体一覧</h2>
+            <p>全選手を一気に並べて、期間内の成績をまとめて見られます。</p>
+          </a>
+          <a class="feature-card" href="glossary.html">
+            <h2>用語集</h2>
+            <p>指標の意味、計算式、見方を初心者向けの日本語で整理しています。</p>
+          </a>
+          <a class="feature-card" href="calculator.html">
+            <h2>計算ツール</h2>
+            <p>主要な指標をその場で計算して確認できます。</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <div class="two-column">
+          <article class="info-card">
+            <h2>できること</h2>
+            <ul class="simple-list">
+              <li>選手ごとの試合データを入力できます。</li>
+              <li>打撃、投手、守備の指標を自動で集計します。</li>
+              <li>開始日と終了日を指定して、その期間の成績だけを見られます。</li>
+              <li>グラフで推移を見て、上向きか下向きかを確認できます。</li>
+            </ul>
+          </article>
+          <article class="info-card">
+            <h2>使い方</h2>
+            <ul class="simple-list">
+              <li>下のテンプレートを開いて試合情報と成績を入力します。</li>
+              <li>トップページのインポートから Excel ファイルを取り込みます。</li>
+              <li>各ページで選手を選び、期間を指定して成績を確認します。</li>
+              <li>全体一覧ページでは全員分を同じ期間で比較できます。</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <article class="info-card">
+          <h2>取込テンプレート</h2>
+          <p class="lead">1つの Excel ファイルに試合情報、打撃成績、投手成績、守備成績をまとめて入力できます。</p>
+          <div class="guide-grid" style="margin-top:16px;">
+            <div class="guide-card">
+              <h3>Excel テンプレート</h3>
+              <p>試合情報、打撃成績入力用、投手成績入力用、捕手成績入力用の4シートが入っています。</p>
+              <div class="button-row" style="margin-top:12px;">
+                <a class="button-primary" href="取込テンプレート_北照_捕手対応版.xlsx">Excel テンプレートを開く</a>
+              </div>
+            </div>
+            <div class="guide-card">
+              <h3>使い方</h3>
+              <p>入力ルールが分からないときは説明ファイルを確認してください。VS Code やメモ帳で開けます。</p>
+              <div class="button-row" style="margin-top:12px;">
+                <a class="button-secondary" href="取込テンプレート_使い方.txt">使い方を見る</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="page-section">
+        <article class="info-card">
+          <h2>ファイルを取り込む</h2>
+          <p class="lead">1つの Excel ファイルから、試合情報と打撃・投手・守備の成績をまとめて読み込みます。</p>
+          <div class="import-layout single" style="margin-top:16px;">
+            <div class="guide-card">
+              <h3>取り込み方法</h3>
+              <ul class="simple-list">
+                <li>テンプレートに成績を入力します。</li>
+                <li>そのまま .xlsx ファイルを選択します。</li>
+                <li>追加または置き換えを選んで取り込みます。</li>
+              </ul>
+              <label style="margin-top:12px;">取込方法
+                <select id="importMode">
+                  <option value="append">既存データに追加</option>
+                  <option value="replace">既存データを置き換え</option>
+                </select>
+              </label>
+            </div>
+            <div class="guide-card">
+              <h3>ファイル選択</h3>
+              <p>試合情報、打撃成績入力用、投手成績入力用、捕手成績入力用の4シートを自動で読み取ります。</p>
+            <label style="margin-top:12px;">Excel ファイル
+                <input id="workbookImportFile" type="file" accept=".xlsx,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+              </label>
+              <div class="button-row" style="margin-top:12px;">
+                <button id="workbookImportButton" type="button" class="button-primary">ファイルを取り込む</button>
+              </div>
+              <p id="workbookImportStatus" class="import-status"></p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="page-section">
+        <article class="info-card">
+          <h2>試合結果サマリー</h2>
+          <p class="lead">勝敗と勝率をまとめて表示します。</p>
+          <div id="resultsSummary" class="metric-grid" style="margin-top:16px;"></div>
+        </article>
+      </section>
+
+      <section class="page-section">
+        <article class="info-card">
+          <h2>試合結果一覧</h2>
+          <p class="lead">取り込んだ試合情報から、日付、相手、大会名、得点、結果を一覧表示します。</p>
+          <div class="table-wrap" style="margin-top:16px;">
+            <table>
+              <thead>
+                <tr>
+                  <th>日付</th>
+                  <th>大会名・区分</th>
+                  <th>相手</th>
+                  <th>北照</th>
+                  <th>相手校</th>
+                  <th>結果</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="resultsTableBody">
+                <tr>
+                  <td colspan="7">
+                    <div class="empty-box">まだ試合結果は取り込まれていません。</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div id="resultEditorPanel" class="panel" style="margin-top:16px;" hidden>
+            <div class="section-head">
+              <h3>試合結果を編集</h3>
+              <p>選んだ試合の内容を修正できます。</p>
+            </div>
+            <form id="resultEditorForm" class="stack-form">
+              <input id="resultEditorId" type="hidden">
+              <div class="form-grid two">
+                <label>日付<input id="resultEditorDate" type="date" required></label>
+                <label>大会名・区分<input id="resultEditorCompetition" type="text"></label>
+              </div>
+              <div class="form-grid two">
+                <label>相手<input id="resultEditorOpponent" type="text" required></label>
+                <label>北照得点<input id="resultEditorHokushoScore" type="number" min="0" required></label>
+              </div>
+              <div class="form-grid two">
+                <label>相手校得点<input id="resultEditorOpponentScore" type="number" min="0" required></label>
+              </div>
+              <div class="button-row">
+                <button type="submit" class="button-primary">保存する</button>
+                <button id="resultEditorCancel" type="button" class="button-secondary">キャンセル</button>
+              </div>
+            </form>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+ <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="common.js"></script>
+<script src="supabase-config.js"></script>
+<script src="supabase-sync.js"></script>
+<script src="import.js"></script>
+</body>
+</html>
