@@ -92,28 +92,46 @@ button, input, select, textarea { font: inherit; }
 
 .hero-gallery {
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 14px;
+  grid-template-columns: minmax(0, 1.08fr) minmax(220px, 0.92fr);
+  gap: 18px;
+  align-items: stretch;
 }
 
 .hero-photo,
 .page-visual {
   position: relative;
-  min-height: 240px;
-  border-radius: 18px;
+  min-height: 260px;
+  border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.16);
   background: #0f1720;
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.3);
 }
 
-.hero-photo-large { min-height: 300px; }
+.hero-photo-large {
+  min-height: 380px;
+  transform: translateY(14px) rotate(-2.2deg);
+}
 
 .hero-photo img,
 .page-visual img {
+  position: relative;
+  z-index: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  transform: scale(1.08);
+  transition: transform 260ms ease, filter 260ms ease;
+}
+
+.hero-mask {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: 999px;
+  backdrop-filter: blur(12px) saturate(0.94);
+  box-shadow: 0 0 26px rgba(12, 18, 24, 0.14);
 }
 
 .hero-photo::after,
@@ -121,16 +139,87 @@ button, input, select, textarea { font: inherit; }
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.58));
+  z-index: 2;
+  background:
+    linear-gradient(180deg, rgba(7, 12, 18, 0.02) 10%, rgba(7, 12, 18, 0.12) 40%, rgba(0, 0, 0, 0.62) 100%),
+    linear-gradient(135deg, rgba(116, 216, 199, 0.14), transparent 38%);
 }
 
-.hero-photo figcaption {
+.hero-photo::before {
+  content: "";
   position: absolute;
-  left: 14px;
-  bottom: 12px;
-  z-index: 1;
-  font-size: 0.82rem;
-  color: #fff;
+  inset: 12px 12px auto auto;
+  width: 72px;
+  height: 72px;
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+  border-right: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 0 18px 0 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hero-mask-training-main {
+  left: 27%;
+  top: 24%;
+  width: 25%;
+  height: 18%;
+  background:
+    radial-gradient(circle at 42% 45%, rgba(233, 237, 241, 0.96), rgba(233, 237, 241, 0.84) 62%, rgba(233, 237, 241, 0) 100%);
+}
+
+.hero-mask-training-side {
+  right: 3%;
+  top: 28%;
+  width: 21%;
+  height: 16%;
+  background:
+    radial-gradient(circle at 38% 44%, rgba(225, 230, 235, 0.9), rgba(225, 230, 235, 0.74) 58%, rgba(225, 230, 235, 0) 100%);
+}
+
+.hero-mask-training-back {
+  left: 54%;
+  top: 26%;
+  width: 18%;
+  height: 12%;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(228, 232, 237, 0.62), rgba(228, 232, 237, 0.42) 58%, rgba(228, 232, 237, 0) 100%);
+}
+
+.hero-photo-sprint img {
+  object-position: 48% 24%;
+}
+
+.hero-photo-batting {
+  min-height: 332px;
+  transform: translateY(-20px) rotate(3.2deg);
+}
+
+.hero-photo-batting img {
+  object-position: 42% center;
+  transform: scale(1.18);
+}
+
+.hero-mask-batting-helmet {
+  left: 39%;
+  top: 12%;
+  width: 7%;
+  height: 8%;
+  background:
+    radial-gradient(circle at 48% 50%, rgba(55, 74, 103, 0.94), rgba(55, 74, 103, 0.84) 62%, rgba(55, 74, 103, 0) 100%);
+}
+
+.hero-mask-batting-chest {
+  left: 31%;
+  top: 24%;
+  width: 23%;
+  height: 13%;
+  background:
+    radial-gradient(circle at 48% 50%, rgba(237, 241, 242, 0.96), rgba(237, 241, 242, 0.88) 58%, rgba(237, 241, 242, 0.06) 82%, rgba(237, 241, 242, 0) 100%);
+}
+
+.hero-photo:hover img {
+  transform: scale(1.14);
+  filter: saturate(1.06);
 }
 
 .hero-badges {
@@ -668,6 +757,17 @@ th {
 
   .hero-gallery {
     grid-template-columns: 1fr;
+  }
+
+  .hero-photo-large,
+  .hero-photo-batting {
+    min-height: 300px;
+    transform: none;
+  }
+
+  .hero-photo img,
+  .hero-photo-batting img {
+    transform: scale(1.08);
   }
 
   .photo-banner-copy {
